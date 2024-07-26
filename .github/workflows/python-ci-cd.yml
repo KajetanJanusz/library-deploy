@@ -27,4 +27,4 @@ jobs:
     
     - name: Build and run with Docker Compose
       run: |
-        docker compose up -d
+        cd deploy && docker compose up -d

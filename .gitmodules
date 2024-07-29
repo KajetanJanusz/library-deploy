@@ -1,7 +1,9 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/KajetanJanusz/library-backend.git
-    branch =
+	branch = master
+
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/KajetanJanusz/library-frontend.git
+	branch = master

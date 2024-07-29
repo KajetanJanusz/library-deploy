@@ -5,17 +5,17 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-COPY deploy/backend/Pipfile /app/
-COPY deploy/backend/Pipfile.lock /app/
+COPY library-deploy/backend/Pipfile /app/
+COPY library-deploy/backend/Pipfile.lock /app/
 
 RUN pip install --upgrade pip
 RUN pip install pipenv
 RUN pipenv install --system --deploy
 
-COPY deploy/backend /app
+COPY library-deploy/backend /app
 
 RUN chmod +x /app/docker_entrypoints/run_backend.sh
 
 EXPOSE 8000
 
-ENTRYPOINT ["/app/docker_entrypoints/run_backend.sh"]
+CMD ["/bin/bash", "/app/docker_entrypoints/run_backend.sh"]
